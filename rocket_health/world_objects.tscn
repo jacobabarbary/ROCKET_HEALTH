@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://rocket.tscn" type="PackedScene" id=2]
+
+[node name="world_objects" type="Node"]
+
+[node name="rocket" parent="." instance=ExtResource( 2 )]
+position = Vector2( 231.942, 55.0524 )
+[connection signal="body_shape_entered" from="rocket" to="rocket" method="_on_rocket_body_shape_entered"]

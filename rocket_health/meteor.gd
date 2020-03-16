@@ -1,0 +1,9 @@
+extends Area2D
+
+
+func _physics_process(delta):
+	
+	var rocket_pos = get_parent().get_node("rocket").position
+	
+	
+	

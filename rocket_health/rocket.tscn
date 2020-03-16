@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://rocket_powerd.svg" type="Texture" id=1]
+[ext_resource path="res://RigidBody2D.gd" type="Script" id=2]
+[ext_resource path="res://stamina_bar.gd" type="Script" id=3]
+[ext_resource path="res://health_bar.svg" type="Texture" id=4]
+[ext_resource path="res://drawing.svg" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="rocket" type="RigidBody2D"]
+position = Vector2( 0.527816, 0.341496 )
+linear_damp = 0.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+speed = 15
+angular_speed = 2.0
+max_velocity = 200
+
+[node name="rocket_sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.214043, 4.28089 )
+scale = Vector2( 0.249605, 0.249605 )
+frames = SubResource( 1 )
+
+[node name="stamina_bar" type="Sprite" parent="."]
+position = Vector2( -20.0421, -0.139256 )
+rotation = 1.5708
+scale = Vector2( 0.1, 0.01 )
+texture = ExtResource( 4 )
+script = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 3, 3 )
+current = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.12072, 0.367451 )
+scale = Vector2( 0.637649, 1.68555 )
+shape = SubResource( 2 )

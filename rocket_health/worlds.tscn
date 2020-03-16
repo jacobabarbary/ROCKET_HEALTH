@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://rocket.tscn" type="PackedScene" id=3]
+
+[node name="worlds" type="Node2D"]
+
+[node name="rocket" parent="." instance=ExtResource( 3 )]
